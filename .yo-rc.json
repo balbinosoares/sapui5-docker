@@ -1,0 +1,11 @@
+{
+  "generator-easy-ui5": {
+    "projectname": "sapui5-docker",
+    "namespace": "example",
+    "platform": "Cloud Foundry HTML5 Application Repository",
+    "viewtype": "XML",
+    "viewname": "MainView",
+    "ui5libs": "Content delivery network (SAPUI5)",
+    "newdir": false
+  }
+}
