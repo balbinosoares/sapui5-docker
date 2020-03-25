@@ -7,8 +7,8 @@ The template uses UI5 tooling (Serve and UI5 Middleware Livereload) more infos i
 
 ## Prerequisites
 
-1- Install Nodejs;
-2- Install Docker and Docker Compose;
+1. Install Nodejs;
+2. Install Docker and Docker Compose;
 
 
 ## Credits
