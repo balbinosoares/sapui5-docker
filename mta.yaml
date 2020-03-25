@@ -1,0 +1,52 @@
+ID: sapui5-docker
+_schema-version: 3.2.0
+description: Enter description here
+version: 0.0.1
+parameters:
+  enable-parallel-deployments: true
+
+modules:
+ - name: sapui5-docker
+   type: nodejs
+   path: approuter
+   parameters:
+      disk-quota: 512M
+      memory: 512M
+   requires:
+      - name: sapui5-docker_destination
+      - name: sapui5-docker_uaa
+      - name: sapui5-docker_html5_repo_runtime
+ - name: sapui5-docker_deployer
+   type: com.sap.html5.application-content
+   path: deployer
+   requires:
+     - name: sapui5-docker_html5_repo_host
+   build-parameters:
+     builder: custom
+     commands:
+       - npm run build:ui --prefix ..
+
+resources:
+ - name: sapui5-docker_destination
+   type: org.cloudfoundry.managed-service
+   parameters:
+      service-plan: lite
+      service: destination
+ - name: sapui5-docker_uaa
+   type: org.cloudfoundry.managed-service
+   parameters:
+     path: ./xs-security.json
+     service-plan: application
+     service: xsuaa
+ - name: sapui5-docker_html5_repo_runtime
+   type: org.cloudfoundry.managed-service
+   parameters:
+      service-plan: app-runtime
+      service: html5-apps-repo
+ - name: sapui5-docker_html5_repo_host
+   type: org.cloudfoundry.managed-service
+   parameters:
+      service-plan: app-host
+      service: html5-apps-repo
+      config:
+        sizeLimit: 5

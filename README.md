@@ -1,2 +1,6 @@
 # sapui5-docker
-Template to local development with SAPUI5 and Docker
+Insert the purpose of this project and some intersting infos here
+
+
+## Credits
+This project has been generated with 💙 and [easy-ui5](https://github.com/SAP)

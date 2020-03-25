@@ -1,0 +1,8 @@
+{
+  "welcomeFile": "examplesapui5-docker/",
+  "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": []
+}
