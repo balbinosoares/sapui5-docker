@@ -2,10 +2,10 @@
   "name": "sapui5-docker",
   "version": "0.0.1",
   "engines": {
-    "node": "12.X"
+    "node": "10.X"
   },
   "scripts": {
-    "start": "ui5 serve --accept-remote-connections",
+    "start": "ui5 serve -o index.html --accept-remote-connections",
     "serve": "ui5 serve",
     "test": "run-s lint karma",
     "karma-ci": "karma start karma-ci.conf.js",
